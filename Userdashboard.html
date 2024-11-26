@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karate Academy Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .user-profile {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .nav-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item:hover {
+            background-color: #34495e;
+        }
+
+        .nav-item.active {
+            background-color: #3498db;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .value {
+            font-size: 1.8em;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .upcoming-classes {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .class-list {
+            margin-top: 15px;
+        }
+
+        .class-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .progress-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .belt-progress {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+
+        .belt-step {
+            flex: 1;
+            height: 10px;
+            background-color: #ecf0f1;
+            position: relative;
+        }
+
+        .belt-step.completed {
+            background-color: #27ae60;
+        }
+
+        .belt-step.current {
+            background-color: #f1c40f;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Karate Academy</h2>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 id="user-name">John Doe</h3>
+                <p id="user-belt">Yellow Belt</p>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Schedule</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Achievements</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>Student Dashboard</h1>
+                <div class="date">November 26, 2024</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Classes Attended</h3>
+                    <div class="value">24</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Current Belt</h3>
+                    <div class="value">Yellow</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Hours Trained</h3>
+                    <div class="value">48</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Next Belt Test</h3>
+                    <div class="value">Dec 15</div>
+                </div>
+            </div>
+
+            <div class="upcoming-classes">
+                <h2>Upcoming Classes</h2>
+                <div class="class-list">
+                    <div class="class-item">
+                        <div>
+                            <h3>Basic Kata Training</h3>
+                            <p>Today, 6:00 PM - 8:00 PM</p>
+                        </div>
+                        <button>Join Class</button>
+                    </div>
+                    <div class="class-item">
+                        <div>
+                            <h3>Sparring Practice</h3>
+                            <p>Tomorrow, 6:00 PM - 8:00 PM</p>
+                        </div>
+                        <button>Join Class</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>Belt Progress</h2>
+                <div class="belt-progress">
+                    <div class="belt-step completed" title="White Belt"></div>
+                    <div class="belt-step current" title="Yellow Belt"></div>
+                    <div class="belt-step" title="Orange Belt"></div>
+                    <div class="belt-step" title="Green Belt"></div>
+                    <div class="belt-step" title="Blue Belt"></div>
+                    <div class="belt-step" title="Brown Belt"></div>
+                    <div class="belt-step" title="Black Belt"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Example data - In a real application, this would come from a backend
+        const userData = {
+            name: "John Doe",
+            belt: "Yellow Belt",
+            classesAttended: 24,
+            hoursTrained: 48,
+            nextBeltTest: "Dec 15",
+            upcomingClasses: [
+                {
+                    name: "Basic Kata Training",
+                    time: "Today, 6:00 PM - 8:00 PM"
+                },
+                {
+                    name: "Sparring Practice",
+                    time: "Tomorrow, 6:00 PM - 8:00 PM"
+                }
+            ]
+        };
+
+        // Update DOM with user data
+        document.getElementById('user-name').textContent = userData.name;
+        document.getElementById('user-belt').textContent = userData.belt;
+
+        // Add click handlers for navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karate Academy Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Karate Academy Registration</h1>
+        <p>Begin your journey in martial arts excellence</p>
+    </header>
+
+    <div class="container">
+        <form class="registration-form" onsubmit="handleSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" required min="4" placeholder="Enter your age">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label>Current Belt Level</label>
+                    <div class="belt-selection">
+                        <div class="belt-option white-belt">White</div>
+                        <div class="belt-option yellow-belt">Yellow</div>
+                        <div class="belt-option orange-belt">Orange</div>
+                        <div class="belt-option green-belt">Green</div>
+                        <div class="belt-option blue-belt">Blue</div>
+                        <div class="belt-option brown-belt">Brown</div>
+                        <div class="belt-option black-belt">Black</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Training Schedule</label>
+                    <select required>
+                        <option value="">Select a schedule</option>
+                        <option value="morning">Morning (6:00 AM - 8:00 AM)</option>
+                        <option value="afternoon">Afternoon (2:00 PM - 4:00 PM)</option>
+                        <option value="evening">Evening (6:00 PM - 8:00 PM)</option>
+                        <option value="weekend">Weekend Classes</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register Now</button>
+        </form>
+
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-black-belt feature-icon"></i>
+                <h3>Expert Instructors</h3>
+                <p>Learn from certified black belt masters</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-dojo feature-icon"></i>
+                <h3>Modern Facilities</h3>
+                <p>State-of-the-art training equipment</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-certificate feature-icon"></i>
+                <h3>Belt Certification</h3>
+                <p>Internationally recognized certification</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/dash.js"></script>
+</body>
+</html>

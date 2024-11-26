@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karate Academy - Sign In</title>
+    <link rel="stylesheet" href="assets/auth.css">
+    <style>
+        /* Additional styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .close-modal:hover {
+            color: #ff4d4d;
+        }
+
+        .modal-title {
+            margin-bottom: 1.5rem;
+            color: #ff4d4d;
+            text-align: center;
+        }
+
+        .modal-message {
+            text-align: center;
+            margin-top: 1rem;
+            color: #4dff4d;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-text">
+            <h1>Welcome to Karate Academy</h1>
+            <p>Begin your journey to mastery</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showForm('signin')">Sign In</div>
+            <div class="tab" onclick="showForm('signup')">Sign Up</div>
+        </div>
+
+        <form id="signin-form">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="signin-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="signin-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Sign In</button>
+            <div class="forgot-password">
+                <a href="#" id="forgot-password">Forgot Password?</a>
+            </div>
+        </form>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="signup-password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="signup-password-confirm" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Password Reset Modal -->
+    <div id="resetModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Reset Password</h2>
+            <form id="reset-password-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="reset-email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">Send Reset Link</button>
+            </form>
+            <div id="reset-message" class="modal-message"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+    
+    <!-- Custom JS -->
+    <script type="module" src="assets/script.js"></script>
+</body>
+</html>
