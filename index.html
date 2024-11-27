@@ -15,69 +15,50 @@
         header {
             background: #2c3e50;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         nav a {
             color: #ecf0f1;
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #e74c3c;
         }
         .hero {
-            background: url('karate-hero.jpg') no-repeat center center/cover;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-        .cta {
             background: #e74c3c;
             color: white;
-            padding: 15px 25px;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+        }
+        .cta {
+            background: #fff;
+            color: #e74c3c;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.2em;
-            transition: background 0.3s;
+            margin-top: 15px;
+            transition: background 0.3s, color 0.3s;
         }
         .cta:hover {
-            background: #c0392b;
+            background: #ecf0f1;
+            color: #c0392b;
         }
-        .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .section {
-            background: white;
-            border-radius: 10px;
-            margin: 20px 0;
+        .classes, .contact {
             padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         h2 {
             text-align: center;
-            margin-bottom: 20px;
             color: #2c3e50;
         }
         ul {
@@ -91,39 +72,12 @@
         li:last-child {
             border-bottom: none;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background: #f2f2f2;
-        }
-        blockquote {
-            border-left: 3px solid #e74c3c;
-            padding-left: 10px;
-            margin: 20px 0;
-            font-style: italic;
-        }
-        .footer {
+        footer {
             background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1.2em;
-            }
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -132,76 +86,36 @@
 <header>
     <h1>Karate Academy</h1>
     <nav>
-        <a href="#about">About Us</a>
+        <a href="#about">About</a>
         <a href="#classes">Classes</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Unleash Your Potential with Karate!</h1>
-    <p>Join our community and learn the art of self-defense, discipline, and respect.</p>
-    <button class="cta" onclick="window.location.href='signin.html';">Get Started Today</button>
-
+    <h1>Unleash Your Potential!</h1>
+    <p>Join our karate community today.</p>
+    <button class="cta" onclick="window.location.href='signin.html';">Get Started</button>
 </section>
 
-<div class="content">
-    <section id="about" class="section">
-        <h2>About Our Academy</h2>
-        <p>We are dedicated to providing high-quality karate training for all ages. Our experienced instructors foster a supportive environment that encourages personal growth and confidence.</p>
-    </section>
-
-    <section id="classes" class="section">
-        <h2>Classes Offered</h2>
-        <ul>
-            <li>Kids Karate: Fun and engaging classes for children ages 5-12.</li>
-            <li>Adult Karate: Physical fitness and self-defense techniques.</li>
-            <li>Self-Defense Workshops: Learn practical skills to protect yourself.</li>
-            <li>Sparring Sessions: Test your skills in a controlled environment.</li>
-        </ul>
-    </section>
-
-    <section id="schedule" class="section">
-        <h2>Upcoming Classes</h2>
-        <table>
-            <tr>
-                <th>Day</th>
-                <th>Time</th>
-                <th>Class Type</th>
-            </tr>
-            <tr>
-                <td>Monday</td>
-                <td>5 PM</td>
-                <td>Kids Karate</td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>7 PM</td>
-                <td>Adult Karate</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>6 PM</td>
-                <td>Self-Defense</td>
-            </tr>
-        </table>
-    </section>
-
-    <section id="testimonials" class="section">
-        <h2>What Our Students Say</h2>
-        <blockquote>"Joining this academy changed my life! The instructors are fantastic." - Jane D.</blockquote>
-        <blockquote>"A great place for my kids to learn discipline and respect." - Mark S.</blockquote>
-    </section>
+<div class="classes" id="classes">
+    <h2>Classes Offered</h2>
+    <ul>
+        <li>Kids Karate: Ages 5-12</li>
+        <li>Adult Karate: Fitness and self-defense</li>
+        <li>Self-Defense Workshops</li>
+    </ul>
 </div>
 
-<footer class="footer" id="contact">
+<div class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>123 Karate Lane, Martial Arts City, MA 12345</p>
     <p>Phone: (123) 456-7890</p>
     <p>Email: info@karateacademy.com</p>
-    <p>Follow us on: <a href="#" style="color: white;">Facebook</a> | <a href="#" style="color: white;">Instagram</a> | <a href="#" style="color: white;">Twitter</a></p>
+</div>
+
+<footer>
+    &copy; 2023 Karate Academy. All rights reserved.
 </footer>
 
 </body>
